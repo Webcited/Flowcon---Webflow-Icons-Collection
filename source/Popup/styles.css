@@ -1,0 +1,512 @@
+@import '../styles/fonts';
+@import '../styles/reset';
+@import '../styles/variables';
+
+@font-face {
+  font-family: 'webflow-icons';
+  src: url('data:application/x-font-ttf;charset=utf-8;base64,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')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+}
+
+.w-button {
+  display: inline-block;
+  padding: 9px 15px;
+  background-color: #3898ec;
+  color: white;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+input.w-button {
+  -webkit-appearance: button;
+}
+
+h1,
+h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 38px;
+  line-height: 44px;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+  margin-top: 20px;
+}
+
+.w-form-done {
+  display: none;
+  padding: 20px;
+  text-align: center;
+  background-color: #dddddd;
+}
+
+.w-form-fail {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ffdede;
+}
+
+.w-input {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+.w-input:-moz-placeholder {
+  color: #999;
+}
+
+.w-input::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+.w-input:-ms-input-placeholder {
+  color: #999;
+}
+
+.w-input::-webkit-input-placeholder {
+  color: #999;
+}
+
+.w-input:focus {
+  border-color: #3898ec;
+  outline: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+ Start of custom Webflow CSS
+ ========================================================================== */
+
+.image {
+  position: relative;
+  left: 2%;
+  top: 62%;
+  right: auto;
+  bottom: 0%;
+  z-index: 99;
+  display: block;
+  margin-top: -83px;
+  margin-left: 33px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.body {
+  background-color: #fff;
+  font-family: Spacegrotesk, sans-serif;
+}
+
+.link {
+  display: block;
+  padding: 15px 10px 5px;
+  background-color: #000;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+}
+
+.name {
+  color: #000;
+}
+
+.mainflatconbody {
+  width: 350px;
+  height: 600px;
+  background-color: #000;
+}
+
+.headerofextenstion {
+  border-bottom: 1px solid #fdfdfd;
+}
+
+.logotext {
+  display: inline-block;
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  font-family: Redcollar, sans-serif;
+  color: #fff;
+  font-size: 42px;
+  line-height: 46px;
+}
+
+.escbutton {
+  display: inline-block;
+  width: 45%;
+  margin-top: 0px;
+  padding-right: 10px;
+  color: #fff;
+  font-size: 18px;
+  text-align: right;
+}
+
+.iconsearchinput {
+  display: inline-block;
+  width: 70%;
+  margin-top: 10px;
+}
+
+.iconsubmitbutton {
+  width: 30%;
+}
+
+.mainform {
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.buymeacoffeesectionwrapper {
+  position: static;
+  left: 0%;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  background-color: gold;
+}
+
+.iconswilldisplayinthisdiv {
+  height: 369px;
+}
+
+.buymeacoffeebuttonwrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  height: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #fff;
+  background-color: #000;
+}
+
+.buycoffeetext {
+  width: 80%;
+  height: 100%;
+  margin-left: 10px;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  -ms-grid-row-align: auto;
+  align-self: auto;
+  border-left: 1px solid #fff;
+}
+
+.wearefeelingsleepytext {
+  margin-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: Spacegrotesk, sans-serif;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.webcited-colink {
+  display: inline-block;
+  width: 50%;
+  height: 23px;
+  min-width: 50%;
+  padding-top: 2px;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  background-color: #fff;
+  text-align: center;
+  cursor: alias;
+}
+
+.chromeextenstionlink {
+  display: inline-block;
+  width: 50%;
+  height: 23px;
+  padding-top: 2px;
+  border-bottom: 1px solid #000;
+  background-color: #fff;
+  text-align: center;
+  cursor: alias;
+}
+
+@font-face {
+  font-family: 'Spacegrotesk';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccddd9f35c0d4bae200d_SpaceGrotesk-Bold.woff2')
+      format('woff2'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccdd6d85a9350329575d_SpaceGrotesk-Bold.woff')
+      format('woff'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96cca027611ba16688635e_SpaceGrotesk-Bold.ttf')
+      format('truetype'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccc661373e4b232c0dfb_SpaceGrotesk-Bold.otf')
+      format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spacegrotesk';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccdd5bc17527630ee122_SpaceGrotesk-Light.woff2')
+      format('woff2'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccddab2f716ea495ff9a_SpaceGrotesk-Light.woff')
+      format('woff'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96cca039f1ef73a65fed5c_SpaceGrotesk-Light.ttf')
+      format('truetype'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccc6540dbc2cd4d94e7a_SpaceGrotesk-Light.otf')
+      format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spacegrotesk';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccdd2d38d534b3412c51_SpaceGrotesk-Medium.woff2')
+      format('woff2'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccdd59486e3f40dfbc60_SpaceGrotesk-Medium.woff')
+      format('woff'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96cca093a72a5dead84539_SpaceGrotesk-Medium.ttf')
+      format('truetype'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccc6e65041e61baad790_SpaceGrotesk-Medium.otf')
+      format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spacegrotesk';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccdd567b8645cf7032f8_SpaceGrotesk-Regular.woff2')
+      format('woff2'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccdd59486e7ba8dfbc61_SpaceGrotesk-Regular.woff')
+      format('woff'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96cca01fd096c8099262a7_SpaceGrotesk-Regular.ttf')
+      format('truetype'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccc6dfe1705ff8657a10_SpaceGrotesk-Regular.otf')
+      format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spacegrotesk';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccde4b26214cd65d4bd8_SpaceGrotesk-SemiBold.woff2')
+      format('woff2'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccde4b262172be5d4bd7_SpaceGrotesk-SemiBold.woff')
+      format('woff'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96cca02d38d5a4a5412c2e_SpaceGrotesk-SemiBold.ttf')
+      format('truetype'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5f96ccc71317a8038e4eecd5_SpaceGrotesk-SemiBold.otf')
+      format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Redcollar';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fac1bcf7338983fef0b20f2_Redcollar.woff2')
+    format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d6321df578aeb3ec72_BlaakBlackItalic_PERSONAL.ttf')
+    format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d9d531522e5e7d07b5_BlaakThinItalic_PERSONAL.ttf')
+    format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d72c55e00bc1a8487d_BlaakExtraBoldItalic_PERSONAL.ttf')
+      format('truetype'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d71476452da4378dae_BlaakBoldItalic_PERSONAL.ttf')
+      format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d9eedff9dd66afebdd_BlaakLight_PERSONAL.ttf')
+    format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d94b4d90197104a701_BlaakRegularItalic_PERSONAL.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d67f6a0f341875fd25_BlaakBold_PERSONAL.ttf')
+      format('truetype'),
+    url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d82c55e022f7a8487e_BlaakExtraBold_PERSONAL.ttf')
+      format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d9e0a6304596cb4c54_BlaakRegular_PERSONAL.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d9a8cf376cf0c1e351_BlaakThin_PERSONAL.ttf')
+    format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05dca8cf37c496c1e352_BlaakBlack_PERSONAL.ttf')
+    format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fae05d860aaa8934167f285_BlaakLightItalic_PERSONAL.ttf')
+    format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bagnardsans';
+  src: url('https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fac1c3fcafaca0ed9745761_BagnardSans.otf')
+    format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+}

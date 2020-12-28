@@ -1,54 +1,79 @@
 import * as React from 'react';
-import {browser, Tabs} from 'webextension-polyfill-ts';
-
-import './styles.scss';
-
-function openWebPage(url: string): Promise<Tabs.Tab> {
-  return browser.tabs.create({url});
-}
+import './styles.css';
 
 const Popup: React.FC = () => {
   return (
-    <section id="popup">
-      <h2>WEB-EXTENSION-STARTER</h2>
-      <button
-        id="options__button"
-        type="button"
-        onClick={(): Promise<Tabs.Tab> => {
-          return openWebPage('options.html');
-        }}
-      >
-        Options Page
-      </button>
-      <div className="links__holder">
-        <ul>
-          <li>
-            <button
-              type="button"
-              onClick={(): Promise<Tabs.Tab> => {
-                return openWebPage(
-                  'https://github.com/abhijithvijayan/web-extension-starter'
-                );
-              }}
-            >
-              GitHub
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              onClick={(): Promise<Tabs.Tab> => {
-                return openWebPage(
-                  'https://www.buymeacoffee.com/abhijithvijayan'
-                );
-              }}
-            >
-              Buy Me A Coffee
-            </button>
-          </li>
-        </ul>
+    <div className="mainflatconbody">
+      <div className="headerofextenstion">
+        <h1 className="logotext">Flatcon</h1>
+        <h1 className="escbutton">Esc</h1>
       </div>
-    </section>
+      <div>
+        <form
+          id="email-form"
+          name="email-form"
+          data-name="Email Form"
+          className="mainform"
+        >
+          <input
+            type="text"
+            className="iconsearchinput w-input"
+            maxLength={256}
+            name="name"
+            data-name="Name"
+            placeholder="Arrows, Social Medi...."
+            id="name"
+            required
+          />
+          <input
+            type="submit"
+            value="Search"
+            data-wait="Please wait..."
+            className="iconsubmitbutton w-button"
+          />
+        </form>
+        <div className="w-form-done">
+          <div>Thank you! Your submission has been received!</div>
+        </div>
+        <div className="w-form-fail">
+          <div>Oops! Something went wrong while submitting the form.</div>
+        </div>
+      </div>
+      <div className="iconswilldisplayinthisdiv">test</div>
+      <div className="buymeacoffeesectionwrapper">
+        <a
+          href="https://www.buymeacoffee.com/webcited"
+          target="_blank"
+          rel="noreferrer"
+          className="buymeacoffeebuttonwrapper w-inline-block"
+        >
+          <img
+            src="https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fe8a2ce020395d472d7d47b_Coffee.png"
+            loading="lazy"
+            width="37"
+            alt="coffee"
+            className="coffeeimage"
+          />
+          <div className="buycoffeetext">
+            <h3 className="wearefeelingsleepytext">
+              We are feeling sleeply
+              <br />
+              Buy us a coffee
+            </h3>
+          </div>
+        </a>
+        <link rel="prerender" href="https://www.buymeacoffee.com/webcited" />
+      </div>
+      <a
+        href="https://webcited.co/?utm-flatcon"
+        target="_blank"
+        rel="noreferrer"
+        className="webcited-colink"
+      >
+        Webcited.co
+      </a>
+      <a className="chromeextenstionlink">Webflow Code Exporter</a>
+    </div>
   );
 };
 
