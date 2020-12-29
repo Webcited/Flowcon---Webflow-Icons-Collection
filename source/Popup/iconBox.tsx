@@ -1,15 +1,16 @@
 import * as React from 'react';
+import {ReactSVG} from 'react-svg';
 
 interface Props {
-  link: string;
+  iconid: number;
 }
 
 const IconBox: React.FC<Props> = (props) => {
-  const { link } = props;
+  const {iconid} = props;
   return (
-    <div className="box">
-      <img src={link} alt="asdf" />
-    </div>
+    <a href={`https://flatcon.herokuapp.com/icon/${iconid}`} className="box">
+      <ReactSVG src={`https://flatcon.herokuapp.com/icon/${iconid}`} />
+    </a>
   );
 };
 

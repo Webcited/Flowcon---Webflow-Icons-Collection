@@ -247,6 +247,27 @@ h3 {
 
 .iconswilldisplayinthisdiv {
   height: 369px;
+  width: 365px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  background: #fff;
+}
+
+.box>div {
+  margin: 10px;
+}
+
+.box svg {
+  height: 100%;
+  width: 100%;
 }
 
 .buymeacoffeebuttonwrapper {

@@ -1,7 +1,33 @@
-import * as React from 'react';
-import './styles.css';
+import * as React from "react";
+import { EventHandler, ChangeEvent, MouseEvent } from "react";
+import IconBox from "./iconBox";
+import "./styles.css";
 
+const { useState, useEffect } = React;
 const Popup: React.FC = () => {
+  const [list, setList] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  useEffect(() => {
+    fetch("https://flatcon.herokuapp.com/search?q=test&count=20")
+      .then((res) => res.json())
+      .then(({ icons }) => {
+        setList(icons);
+      });
+  }, []);
+
+  const handleChange: EventHandler<ChangeEvent> = (e) => {
+    const {value} = e.target as HTMLInputElement;
+    setSearchText(value);
+  };
+
+  const submit:EventHandler<MouseEvent>=()=>{
+    fetch(`https://flatcon.herokuapp.com/search?q=${searchText}&count=20`)
+      .then((res) => res.json())
+      .then(({ icons }) => {
+        setList(icons);
+      });
+  }
+
   return (
     <div className="mainflatconbody">
       <div className="headerofextenstion">
@@ -23,13 +49,15 @@ const Popup: React.FC = () => {
             data-name="Name"
             placeholder="Arrows, Social Medi...."
             id="name"
+            onChange={handleChange}
             required
           />
           <input
-            type="submit"
+            type="button"
             value="Search"
             data-wait="Please wait..."
             className="iconsubmitbutton w-button"
+            onClick={submit}
           />
         </form>
         <div className="w-form-done">
@@ -39,7 +67,11 @@ const Popup: React.FC = () => {
           <div>Oops! Something went wrong while submitting the form.</div>
         </div>
       </div>
-      <div className="iconswilldisplayinthisdiv">test</div>
+      <div className="iconswilldisplayinthisdiv">
+        {list.map(({ icon_id }) => (
+          <IconBox iconid={icon_id} key={icon_id} />
+        ))}
+      </div>
       <div className="buymeacoffeesectionwrapper">
         <a
           href="https://www.buymeacoffee.com/webcited"
