@@ -15,6 +15,7 @@
     "yarn": ">= 1.0.0"
   },
   "scripts": {
+    "start": "node source/server/index.js",
     "dev:chrome": "cross-env NODE_ENV=development cross-env TARGET_BROWSER=chrome webpack --watch",
     "dev:firefox": "cross-env NODE_ENV=development cross-env TARGET_BROWSER=firefox webpack --watch",
     "dev:opera": "cross-env NODE_ENV=development cross-env TARGET_BROWSER=opera webpack --watch",
@@ -23,12 +24,15 @@
     "build:opera": "cross-env NODE_ENV=production cross-env TARGET_BROWSER=opera webpack",
     "build": "yarn run build:chrome && yarn run build:firefox && yarn run build:opera",
     "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "eslint . --ext .ts,.tsx --fix"
+    "lint:fix": "eslint . --ext .js,.ts,.tsx --fix"
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "advanced-css-reset": "^1.2.2",
+    "axios": "^0.21.1",
     "emoji-log": "^1.0.2",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "webext-base-css": "^1.2.0",
@@ -46,6 +50,8 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
     "@babel/preset-typescript": "^7.12.1",
+    "@types/express": "^4.17.9",
+    "@types/morgan": "^1.9.2",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
     "@types/webpack": "^4.41.25",
