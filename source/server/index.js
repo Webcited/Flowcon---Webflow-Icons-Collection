@@ -76,7 +76,7 @@ app.get('/icon/:iconId', async (req, res) => {
 
 app.get('/search', async (req, res) => {
   const {q, count} = req.query;
-  const ret = await search(q);
+  const ret = await search(q, count);
   if (ret && ret.status === 200) res.send(ret.data);
   else res.status(500).send();
 });
