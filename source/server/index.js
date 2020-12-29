@@ -28,7 +28,7 @@ async function getIcon(iconId) {
   }
 }
 
-async function search(q, count=15) {
+async function search(q, count = 15) {
   try {
     const ret = await api.get('icons/search', {
       params: {q, premium: false, vector: true, count},
@@ -69,6 +69,7 @@ app.get('/icon/:iconId', async (req, res) => {
   const ret = await getIcon(iconId);
   if (ret && ret.status === 200) {
     const icon = await getDownloadLink(ret.data);
+    res.setHeader('Content-Type', 'image/svg+xml');
     res.send(icon);
   } else res.status(500).send();
 });
