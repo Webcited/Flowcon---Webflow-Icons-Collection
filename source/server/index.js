@@ -28,10 +28,10 @@ async function getIcon(iconId) {
   }
 }
 
-async function search(q) {
+async function search(q, count=15) {
   try {
     const ret = await api.get('icons/search', {
-      params: {q, premium: false, vector: true},
+      params: {q, premium: false, vector: true, count},
     });
     return ret;
   } catch (e) {
@@ -74,7 +74,7 @@ app.get('/icon/:iconId', async (req, res) => {
 });
 
 app.get('/search', async (req, res) => {
-  const {q} = req.query;
+  const {q, count} = req.query;
   const ret = await search(q);
   if (ret && ret.status === 200) res.send(ret.data);
   else res.status(500).send();
