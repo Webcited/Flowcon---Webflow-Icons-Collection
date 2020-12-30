@@ -1,16 +1,16 @@
-import * as React from "react";
-import { EventHandler, ChangeEvent, MouseEvent } from "react";
-import IconBox from "./iconBox";
-import "./styles.css";
+import * as React from 'react';
+import {EventHandler, ChangeEvent, MouseEvent} from 'react';
+import IconBox from './iconBox';
+import './styles.css';
 
-const { useState, useEffect } = React;
+const {useState, useEffect} = React;
 const Popup: React.FC = () => {
   const [list, setList] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
   useEffect(() => {
-    fetch("https://flatcon.herokuapp.com/search?q=test&count=20")
+    fetch('https://flatcon.herokuapp.com/search?q=test&count=20')
       .then((res) => res.json())
-      .then(({ icons }) => {
+      .then(({icons}) => {
         setList(icons);
       });
   }, []);
@@ -20,13 +20,13 @@ const Popup: React.FC = () => {
     setSearchText(value);
   };
 
-  const submit:EventHandler<MouseEvent>=()=>{
+  const submit: EventHandler<MouseEvent> = () => {
     fetch(`https://flatcon.herokuapp.com/search?q=${searchText}&count=20`)
       .then((res) => res.json())
-      .then(({ icons }) => {
+      .then(({icons}) => {
         setList(icons);
       });
-  }
+  };
 
   return (
     <div className="mainflatconbody">
@@ -68,7 +68,7 @@ const Popup: React.FC = () => {
         </div>
       </div>
       <div className="iconswilldisplayinthisdiv">
-        {list.map(({ icon_id }) => (
+        {list.map(({icon_id}) => (
           <IconBox iconid={icon_id} key={icon_id} />
         ))}
       </div>
