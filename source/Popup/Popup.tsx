@@ -1,29 +1,29 @@
-import * as React from 'react';
-import {EventHandler, ChangeEvent, MouseEvent} from 'react';
-import IconBox from './iconBox';
-import './styles.css';
+import * as React from "react";
+import { EventHandler, ChangeEvent, MouseEvent } from "react";
+import IconBox from "./iconBox";
+import "./styles.css";
 
-const {useState, useEffect} = React;
+const { useState, useEffect } = React;
 const Popup: React.FC = () => {
   const [list, setList] = useState([]);
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   useEffect(() => {
-    fetch('https://flatcon.herokuapp.com/search?q=test&count=20')
+    fetch("https://flatcon.herokuapp.com/search?q=test&count=100")
       .then((res) => res.json())
-      .then(({icons}) => {
+      .then(({ icons }) => {
         setList(icons);
       });
   }, []);
 
   const handleChange: EventHandler<ChangeEvent> = (e) => {
-    const {value} = e.target as HTMLInputElement;
+    const { value } = e.target as HTMLInputElement;
     setSearchText(value);
   };
 
   const submit: EventHandler<MouseEvent> = () => {
-    fetch(`https://flatcon.herokuapp.com/search?q=${searchText}&count=20`)
+    fetch(`https://flatcon.herokuapp.com/search?q=${searchText}&count=100`)
       .then((res) => res.json())
-      .then(({icons}) => {
+      .then(({ icons }) => {
         setList(icons);
       });
   };
@@ -31,8 +31,7 @@ const Popup: React.FC = () => {
   return (
     <div className="mainflatconbody">
       <div className="headerofextenstion">
-        <h1 className="logotext">Flatcon</h1>
-        <h1 className="escbutton">Esc</h1>
+        <h1 className="logotext">Flowcon</h1>
       </div>
       <div>
         <form
@@ -68,7 +67,7 @@ const Popup: React.FC = () => {
         </div>
       </div>
       <div className="iconswilldisplayinthisdiv">
-        {list.map(({icon_id}) => (
+        {list.map(({ icon_id }) => (
           <IconBox iconid={icon_id} key={icon_id} />
         ))}
       </div>
@@ -80,8 +79,7 @@ const Popup: React.FC = () => {
           className="buymeacoffeebuttonwrapper w-inline-block"
         >
           <img
-            src="https://uploads-ssl.webflow.com/5f96c7606f075a71332792b9/5fe8a2ce020395d472d7d47b_Coffee.png"
-            loading="lazy"
+            src="../assets/coffee.png"
             width="37"
             alt="coffee"
             className="coffeeimage"
@@ -104,7 +102,12 @@ const Popup: React.FC = () => {
       >
         Webcited.co
       </a>
-      <a className="chromeextenstionlink">Webflow Code Exporter</a>
+      <a
+        href="https://chrome.google.com/webstore/detail/webflow-code-exporter/hndfhngkfilifocejcpemadblknkmkjn"
+        className="chromeextenstionlink"
+      >
+        Webflow Code Exporter
+      </a>
     </div>
   );
 };
